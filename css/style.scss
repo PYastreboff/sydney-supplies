@@ -361,9 +361,12 @@ a:focus {
     position: relative;
     margin-top: 25px;
     padding: 15px;
-    background-color: #f7f8f9;
+    background-color: white; // changed from #f7f8
+    color: white;
+    fill: white;
     transition: all .3s;
     overflow: hidden;
+    background-position: center;
 
     .img-box {
       display: flex;

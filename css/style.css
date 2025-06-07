@@ -363,7 +363,7 @@ a:focus {
     position: relative;
     margin-top: 25px;
     padding: 35px 35px;
-    background-color: #f7f8f9;
+    background-color: white; /** replaced with white #f7f8f9; **/
     -webkit-transition: all .3s;
     transition: all .3s;
     overflow: hidden;
