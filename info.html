@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
    <head>
@@ -38,7 +37,7 @@
             margin-bottom: 20px;
          }
          .product-description h4 {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             color: #e74c3c;
             margin-bottom: 15px;
          }
@@ -71,74 +70,112 @@
             background-color: #c0392b;
          }
       </style>
+      <script>
+         // Script to handle product information dynamically
+         const urlParams = new URLSearchParams(window.location.search);
+         const productName = urlParams.get('name');
+         const productPrice = urlParams.get('price');
+         const productDimensions = urlParams.get('dimensions');
+         const productMaterial = urlParams.get('material');
+         const productFeatures = urlParams.get('features');
+         const productImage = urlParams.get('image');
+
+         document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("product-name").innerText = productName || "Unknown Product";
+            document.getElementById("product-price").innerText = productPrice || "N/A";
+            document.getElementById("product-dimensions").innerText = productDimensions || "N/A";
+            document.getElementById("product-material").innerText = productMaterial || "N/A";
+            document.getElementById("product-features").innerText = productFeatures || "N/A";
+            document.getElementById("product-image").src = productImage || "images/placeholder.webp";
+
+            // Calculate and display bulk pricing
+            if (productPrice) {
+               // Extract numeric value from price (e.g., "40.8c per unit" -> 0.408)
+               const unitPriceMatch = productPrice.match(/(\d+\.?\d*)/);
+               if (unitPriceMatch) {
+                  const unitPrice = parseFloat(unitPriceMatch[0]) / 100; // Convert cents to dollars
+                  const per1000Price = (unitPrice * 1000).toFixed(2); // Price for 1000 units
+                  const perCartonPrice = (per1000Price * 0.5564).toFixed(2); // Apply 55.64% of per 1000 price (based on BT - Toddler example)
+                  document.getElementById("product-price-1000").innerText = `$${per1000Price} per 1000`;
+                  document.getElementById("product-price-carton").innerText = `$${perCartonPrice} per carton`;
+               } else {
+                  document.getElementById("product-price-1000").innerText = "N/A";
+                  document.getElementById("product-price-carton").innerText = "N/A";
+               }
+            } else {
+               document.getElementById("product-price-1000").innerText = "N/A";
+               document.getElementById("product-price-carton").innerText = "N/A";
+            }
+         });
+      </script>
    </head>
    <body>
-         <!-- header section starts -->
-         <header class="header_section">
-            <div class="container">
-               <nav class="navbar navbar-expand-lg custom_nav-container ">
-                  <a class="navbar-brand" href="index.html"><img width="250" src="images/logo.png" alt="#" /></a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- header section starts -->
+      <header class="header_section">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+               <a class="navbar-brand" href="index.html"><img width="250" src="images/logo.png" alt="#" /></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                           <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
-                           <ul class="dropdown-menu">
-                              <li><a href="about.html">About</a></li>
-                              <li><a href="testimonial.html">Testimonial</a></li>
-                           </ul>
-                        </li>
-                        <li class="nav-item active">
-                           <a class="nav-link" href="product.html">Products <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="blog_list.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#">
-                              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="about.html">About</a></li>
+                           <li><a href="testimonial.html">Testimonial</a></li>
+                        </ul>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="product.html">Products <span class="sr-only">(current)</span></a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog_list.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">
+                           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                              <g>
                                  <g>
-                                    <g>
-                                       <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                                          c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                                    </g>
+                                    <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                                       c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
                                  </g>
+                              </g>
+                              <g>
                                  <g>
-                                    <g>
-                                       <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                                          C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                                          c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                                          C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                                    </g>
+                                    <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                                       C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                                       c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                                       C457.728,97.71,450.56,86.958,439.296,84.91z" />
                                  </g>
+                              </g>
+                              <g>
                                  <g>
-                                    <g>
-                                       <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                                          c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                                    </g>
+                                    <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                                       c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
                                  </g>
-                              </svg>
-                           </a>
-                        </li>
-                        <form class="form-inline">
-                           <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                              </g>
+                           </svg>
+                        </a>
+                     </li>
+                     <form class="form-inline">
+                        <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
                            <i class="fa fa-search" aria-hidden="true"></i>
-                           </button>
-                        </form>
-                     </ul>
-                  </div>
-               </nav>
-            </div>
-         </header>
-         <!-- end header section -->
+                        </button>
+                     </form>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <!-- end header section -->
 
       <!-- product detail section -->
       <section class="product-detail-section layout_padding">
@@ -146,25 +183,27 @@
             <div class="row">
                <div class="col-md-6">
                   <div class="img-box">
-                     <img src="images/BR.webp" alt="BR - Runt Kraft Bag" class="product-image">
+                     <img id="product-image" src="images/BR.webp" alt="Kraft Bag" class="product-image">
                   </div>
                </div>
                <div class="col-md-6">
                   <div class="product-description">
-                     <h2>BR - Runt Kraft Bag</h2>
-                     <h4>35.2c per unit</h4>
+                     <h2 id="product-name">BR - Runt Kraft Bag</h2>
+                     <h4 id="product-price">35.2c per unit</h4>
+                     <h4 id="product-price-1000">$352.00 per 1000</h4>
+                     <h4 id="product-price-carton">$195.79 per carton</h4>
                      <p>
-                        The BR - Runt Kraft Bag is the perfect solution for small packaging needs. Crafted from high-quality, eco-friendly 110gsm kraft paper, this bag offers durability and style for retail, gifting, or everyday use. Its compact size makes it ideal for smaller items, while the sturdy construction ensures your products are secure.
+                        The perfect solution for small packaging needs. Crafted from high-quality, eco-friendly 110gsm kraft paper, this bag offers durability and style for retail, gifting, or everyday use. Its compact size makes it ideal for smaller items, while the sturdy construction ensures your products are secure.
                      </p>
                      <ul>
-                        <li><strong>Dimensions:</strong> 350 h x 260 w + 90g</li>
-                        <li><strong>Material:</strong> 110gsm Kraft Paper</li>
-                        <li><strong>Features:</strong> Eco-friendly, recyclable, and sturdy handles</li>
+                        <li><strong>Dimensions:</strong> <span id="product-dimensions">350 h x 260 w + 90g</span></li>
+                        <li><strong>Material:</strong> <span id="product-material">110gsm Kraft Paper</span></li>
+                        <li><strong>Features:</strong> <span id="product-features">Eco-friendly, recyclable, and sturdy handles</span></li>
                         <li><strong>Ideal for:</strong> Small retail items, gifts, and promotional products</li>
                      </ul>
                      <div class="btn-box">
                         <a href="buy.html">Buy Now</a>
-                        <a href="" style="margin-left: 10px;">Add to Cart</a>
+                        <a href="#" style="margin-left: 10px;">Add to Cart</a>
                      </div>
                   </div>
                </div>
@@ -173,7 +212,7 @@
       </section>
       <!-- end product detail section -->
 
-      <!-- subscribe section 
+      <!-- subscribe section -->
       <section class="subscribe_section">
          <div class="container-fuild">
             <div class="box">
@@ -187,7 +226,7 @@
                         <form action="">
                            <input type="email" placeholder="Enter your email">
                            <button>
-                           subscribe
+                              subscribe
                            </button>
                         </form>
                      </div>
@@ -196,74 +235,74 @@
             </div>
          </div>
       </section>
-       end subscribe section -->
+      <!-- end subscribe section -->
 
       <!-- footer start -->
       <footer>
          <div class="container">
             <div class="row">
                <div class="col-md-4">
-                   <div class="full">
-                      <div class="logo_footer">
+                  <div class="full">
+                     <div class="logo_footer">
                         <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
-                      </div>
-                      <div class="information_f">
+                     </div>
+                     <div class="information_f">
                         <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
                         <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
                         <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
-                      </div>
-                   </div>
+                     </div>
+                  </div>
                </div>
                <div class="col-md-8">
                   <div class="row">
-                  <div class="col-md-7">
-                     <div class="row">
-                        <div class="col-md-6">
-                     <div class="widget_menu">
-                        <h3>Menu</h3>
-                        <ul>
-                           <li><a href="#">Home</a></li>
-                           <li><a href="#">About</a></li>
-                           <li><a href="#">Services</a></li>
-                           <li><a href="#">Testimonial</a></li>
-                           <li><a href="#">Blog</a></li>
-                           <li><a href="#">Contact</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="widget_menu">
-                        <h3>Account</h3>
-                        <ul>
-                           <li><a href="#">Account</a></li>
-                           <li><a href="#">Checkout</a></li>
-                           <li><a href="#">Login</a></li>
-                           <li><a href="#">Register</a></li>
-                           <li><a href="#">Shopping</a></li>
-                           <li><a href="#">Widget</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                     </div>
-                  </div>     
-                  <div class="col-md-5">
-                     <div class="widget_menu">
-                        <h3>Newsletter</h3>
-                        <div class="information_f">
-                          <p>Subscribe by our newsletter and get update protidin.</p>
+                     <div class="col-md-7">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="widget_menu">
+                                 <h3>Menu</h3>
+                                 <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Testimonial</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="widget_menu">
+                                 <h3>Account</h3>
+                                 <ul>
+                                    <li><a href="#">Account</a></li>
+                                    <li><a href="#">Checkout</a></li>
+                                    <li><a href="#">Login</a></li>
+                                    <li><a href="#">Register</a></li>
+                                    <li><a href="#">Shopping</a></li>
+                                    <li><a href="#">Widget</a></li>
+                                 </ul>
+                              </div>
+                           </div>
                         </div>
-                        <div class="form_sub">
-                           <form>
-                              <fieldset>
-                                 <div class="field">
-                                    <input type="email" placeholder="Enter Your Mail" name="email" />
-                                    <input type="submit" value="Subscribe" />
-                                 </div>
-                              </fieldset>
-                           </form>
+                     </div>     
+                     <div class="col-md-5">
+                        <div class="widget_menu">
+                           <h3>Newsletter</h3>
+                           <div class="information_f">
+                              <p>Subscribe by our newsletter and get update protidin.</p>
+                           </div>
+                           <div class="form_sub">
+                              <form>
+                                 <fieldset>
+                                    <div class="field">
+                                       <input type="email" placeholder="Enter Your Mail" name="email" />
+                                       <input type="submit" value="Subscribe" />
+                                    </div>
+                                 </fieldset>
+                              </form>
+                           </div>
                         </div>
                      </div>
-                  </div>
                   </div>
                </div>
             </div>
