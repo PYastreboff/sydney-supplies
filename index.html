@@ -20,190 +20,163 @@
       <link href="css/style.css" rel="stylesheet" />
       <!-- responsive style -->
       <link href="css/responsive.css" rel="stylesheet" />
+      <!-- New CSS for click toggle -->
+      
    </head>
    <body>
-   
-         <!-- header section strats -->
-         <header class="header_section">
+      <!-- header section strats -->
+      <header class="header_section">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+               <a class="navbar-brand" href="index.html"><img width="250" src="images/logo.png" alt="#" /></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class=""> </span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="about.html">About</a></li>
+                           <li><a href="testimonial.html">Testimonial</a></li>
+                        </ul>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Order by Email</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">
+                           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                              <g>
+                                 <g>
+                                    <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                                       c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                                 </g>
+                              </g>
+                              <g>
+                                 <g>
+                                    <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                                       C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                                       c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                                       C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                                 </g>
+                              </g>
+                              <g>
+                                 <g>
+                                    <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                                       c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                                 </g>
+                              </g>
+                           </svg>
+                        </a>
+                     </li>
+                     <form class="form-inline">
+                        <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                     </form>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <!-- end header section -->
+      <!-- slider section 
+      <section class="slider_section ">
+         <div class="slider_bg_box">
+            <img src="images/slider-bg.jpg" alt="">
+         </div>
+         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container ">
+                     <div class="row">
+                        <div class="col-md-7 col-lg-6 ">
+                           <div class="detail-box">
+                              <h1>
+                                 <span>
+                                 Sale 20% Off
+                                 </span>
+                                 <br>
+                                 On Everything
+                              </h1>
+                              <p>
+                                 Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                              </p>
+                              <div class="btn-box">
+                                 <a href="" class="btn1">
+                                 Shop Now
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item ">
+                  <div class="container ">
+                     <div class="row">
+                        <div class="col-md-7 col-lg-6 ">
+                           <div class="detail-box">
+                              <h1>
+                                 <span>
+                                 Sale 20% Off
+                                 </span>
+                                 <br>
+                                 On Everything
+                              </h1>
+                              <p>
+                                 Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                              </p>
+                              <div class="btn-box">
+                                 <a href="" class="btn1">
+                                 Shop Now
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container ">
+                     <div class="row">
+                        <div class="col-md-7 col-lg-6 ">
+                           <div class="detail-box">
+                              <h1>
+                                 <span>
+                                 Sale 20% Off
+                                 </span>
+                                 <br>
+                                 On Everything
+                              </h1>
+                              <p>
+                                 Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                              </p>
+                              <div class="btn-box">
+                                 <a href="" class="btn1">
+                                 Shop Now
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
             <div class="container">
-               <nav class="navbar navbar-expand-lg custom_nav-container ">
-                  <a class="navbar-brand" href="index.html"><img width="250" src="images/logo.png" alt="#" /></a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class=""> </span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                     <ul class="navbar-nav">
-                        <li class="nav-item active">
-                           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
-                           <ul class="dropdown-menu">
-                              <li><a href="about.html">About</a></li>
-                              <li><a href="testimonial.html">Testimonial</a></li>
-                           </ul>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="contact.html">Order by Email</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#">
-                              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
-                                 <g>
-                                    <g>
-                                       <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                                          c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                                    </g>
-                                 </g>
-                                 <g>
-                                    <g>
-                                       <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                                          C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                                          c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                                          C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                                    </g>
-                                 </g>
-                                 <g>
-                                    <g>
-                                       <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                                          c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                                    </g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                              </svg>
-                           </a>
-                        </li>
-                        <form class="form-inline">
-                           <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                           <i class="fa fa-search" aria-hidden="true"></i>
-                           </button>
-                        </form>
-                     </ul>
-                  </div>
-               </nav>
+               <ol class="carousel-indicators">
+                  <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                  <li data-target="#customCarousel1" data-slide-to="1"></li>
+                  <li data-target="#customCarousel1" data-slide-to="2"></li>
+               </ol>
             </div>
-         </header>
-         <!-- end header section -->
-         <!-- slider section 
-         <section class="slider_section ">
-            <div class="slider_bg_box">
-               <img src="images/slider-bg.jpg" alt="">
-            </div>
-            <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <div class="container ">
-                        <div class="row">
-                           <div class="col-md-7 col-lg-6 ">
-                              <div class="detail-box">
-                                 <h1>
-                                    <span>
-                                    Sale 20% Off
-                                    </span>
-                                    <br>
-                                    On Everything
-                                 </h1>
-                                 <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                                 </p>
-                                 <div class="btn-box">
-                                    <a href="" class="btn1">
-                                    Shop Now
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="carousel-item ">
-                     <div class="container ">
-                        <div class="row">
-                           <div class="col-md-7 col-lg-6 ">
-                              <div class="detail-box">
-                                 <h1>
-                                    <span>
-                                    Sale 20% Off
-                                    </span>
-                                    <br>
-                                    On Everything
-                                 </h1>
-                                 <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                                 </p>
-                                 <div class="btn-box">
-                                    <a href="" class="btn1">
-                                    Shop Now
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="container ">
-                        <div class="row">
-                           <div class="col-md-7 col-lg-6 ">
-                              <div class="detail-box">
-                                 <h1>
-                                    <span>
-                                    Sale 20% Off
-                                    </span>
-                                    <br>
-                                    On Everything
-                                 </h1>
-                                 <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                                 </p>
-                                 <div class="btn-box">
-                                    <a href="" class="btn1">
-                                    Shop Now
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="container">
-                  <ol class="carousel-indicators">
-                     <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-                     <li data-target="#customCarousel1" data-slide-to="1"></li>
-                     <li data-target="#customCarousel1" data-slide-to="2"></li>
-                  </ol>
-               </div>
-            </div>
-         </section>
-         -->
+         </div>
+      </section>
+      -->
       <!-- why section -->
       <section class="why_section layout_padding">
          <div class="container">
@@ -392,7 +365,6 @@
          </div>
       </section>
       <!-- end why section -->
-
       <!-- arrival section 
       <section class="arrival_section">
          <div class="container">
@@ -419,7 +391,6 @@
          </div>
       </section>
       -->
-
       <!-- product section -->
       <section class="product_section layout_padding">
          <div class="container">
@@ -511,7 +482,7 @@
                   </div>
                </div>
                <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box" >
+                  <div class="box">
                      <div class="option_container">
                         <div class="options">
                            <a href="info.html?name=BJ%20-%20Junior&price=45.5c%20per%20unit&dimensions=290%20h%20x%20200%2B%20100g&material=110gsm%20Kraft%20Paper&features=Eco-friendly,%20recyclable,%20sturdy%20handles&image=images/BJ.webp" class="option1">
@@ -527,7 +498,7 @@
                      </div>
                      <div class="detail-box">
                         <h5>
-                          BJ - Junior
+                           BJ - Junior
                         </h5>
                         <h6>
                            45.5c p
@@ -619,7 +590,7 @@
                   </div>
                </div>
                <div class="col-sm-6 col-md-4 col-lg-4">
-                   <div class="box">
+                  <div class="box">
                      <div class="option_container">
                         <div class="options">
                            <a href="info.html?name=B3%20-%20Large&price=76.5c%20per%20unit&dimensions=500%20h%20x%20450%20%2B%20125g&material=110gsm%20Kraft%20Paper&features=Eco-friendly,%20recyclable,%20sturdy%20handles&image=images/B3.webp" class="option1">
@@ -646,7 +617,7 @@
                   </div>
                </div>
                <div class="col-sm-6 col-md-4 col-lg-4">
-                   <div class="box">
+                  <div class="box">
                      <div class="option_container">
                         <div class="options">
                            <a href="info.html?name=BSB%20-%20Small%20BTQ&price=48.1c%20per%20unit&dimensions=250%20h%20x%20350%2B%20+%20110g&material=110gsm%20Kraft%20Paper&features=Eco-friendly,%20recyclable,%20sturdy%20handles&image=images/BSB.webp" class="option1">
@@ -735,7 +706,6 @@
          </div>
       </section>
       <!-- end product section -->
-
       <!-- subscribe section
       <section class="subscribe_section">
          <div class="container-fuild">
@@ -759,7 +729,7 @@
             </div>
          </div>
       </section>
-      end subscribe section -->
+      -->
       <!-- client section -->
       <section class="client_section layout_padding">
          <div class="container">
@@ -903,7 +873,6 @@
                         <a href="https://www.instagram.com/sydney_supplies/">
                         <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
-
                      </div>
                   </div>
                </div>
@@ -937,5 +906,37 @@
       <script src="js/bootstrap.js"></script>
       <!-- custom js -->
       <script src="js/custom.js"></script>
+      <!-- New JavaScript for click toggle -->
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            const boxes = document.querySelectorAll('.product_section .box');
+            function handleBoxToggle(e) {
+               // Prevent click on links from toggling
+               if (e.target.tagName === 'A') return;
+               // Remove active class from all boxes
+               boxes.forEach(b => b.classList.remove('active'));
+               // Toggle active class on clicked box
+               this.classList.toggle('active');
+               // Prevent event from bubbling up
+               e.stopPropagation();
+            }
+            boxes.forEach(box => {
+               // Add both click and touchstart for mobile compatibility
+               box.addEventListener('click', handleBoxToggle);
+               box.addEventListener('touchstart', handleBoxToggle, { passive: true });
+            });
+            // Hide options when clicking/tapping outside
+            document.addEventListener('click', function(e) {
+               if (!e.target.closest('.product_section .box')) {
+                  boxes.forEach(box => box.classList.remove('active'));
+               }
+            });
+            document.addEventListener('touchstart', function(e) {
+               if (!e.target.closest('.product_section .box')) {
+                  boxes.forEach(box => box.classList.remove('active'));
+               }
+            }, { passive: true });
+         });
+      </script>
    </body>
 </html>
