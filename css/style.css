@@ -1133,5 +1133,36 @@ form input[type="submit"]:focus {
   .buy-top-message, .buy-top-message a {
     font-size: 1.1rem;
   }
+
+  .product_section .option_container {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    height: auto;
+    padding: 10px 0;
+    justify-content: baseline;
+    align-items: baseline;
+    background-color: none;
+    display: flex;
+    max-height: 150px;
+  }
+
+  .product_section .box:hover .option_container {
+    /* Override hover effect so it doesn't change on mobile */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .product_section .box div:last-child {
+    margin-bottom: 100px;
+  }
   
+  div.options {
+    margin-bottom: 0px !important;
+  }
+
 }
